@@ -1,0 +1,86 @@
+/* Buttons */
+.btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid transparent;
+
+    font-family: var(--font-demi);
+    font-size: clamp(20px, calc(-0.875rem + 8.333vw), 18px);
+    padding: 1rem 1.2rem;
+
+    border-radius: 6px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn.full {
+    width: 100%;
+}
+
+.btn:hover {
+    transition: 0.4s;
+}
+
+.btn::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: transparent;
+    width: 0%;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    width: 100%;
+    transition: 0.4s;
+}
+
+/* Primary */
+.btn.primary-filled {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.primary-outlined {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn.primary-filled:hover, .btn.primary-outlined:hover {
+    border-color: var(--primary-dark-color);
+    color: var(--white-color);
+}
+
+.btn.primary-filled::before, .btn.primary-outlined::before {
+    background-color: var(--primary-dark-color);
+}
+
+/* Secondary */
+.btn.secondary-filled {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.btn.secondary-outlined {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn.secondary-filled:hover, .btn.secondary-outlined:hover {
+    border-color: var(--secondary-dark-color);
+    color: var(--white-color);
+}
+
+.btn.secondary-filled::before, .btn.secondary-outlined::before {
+    background-color: var(--secondary-dark-color);
+}

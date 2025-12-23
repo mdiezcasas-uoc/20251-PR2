@@ -1,0 +1,41 @@
+/* Fonts config */
+@font-face {
+    font-family:'Flexo Thin';
+    src: url("../fonts/Flexo-Thin.ttf") format("truetype");
+    font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+    font-family:'Flexo Regular';
+    src: url("../fonts/Flexo-Regular.ttf") format("truetype");
+    font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+    font-family:'Flexo Medium';
+    src: url("../fonts/Flexo-Medium.ttf") format("truetype");
+    font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+    font-family:'Flexo Demi';
+    src: url("../fonts/Flexo-Demi.ttf") format("truetype");
+    font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+    font-family:'Flexo Bold';
+    src: url("../fonts/Flexo-Bold.ttf") format("truetype");
+    font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}

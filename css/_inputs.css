@@ -1,0 +1,147 @@
+/* Forms */
+.input-form {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-form input, .input-form select {
+    position: relative;
+
+    width: 100%;
+    border: 1px solid var(--black-color);
+    outline: 1px solid transparent;
+    border-radius: 6px;
+    padding: 1.125rem 1rem;
+    
+    font-family: var(--font-regular);
+    font-size: clamp(18px, calc(-0.875rem + 8.333vw), 16px);
+    transition: 0.2s;
+}
+
+.input-form input:focus, .input-form select:focus {
+    outline-color: var(--black-color);
+    transition: 0.2s;
+}
+
+.input-form input::placeholder {
+    opacity: 0;
+}
+
+.input-form label {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    padding: 0 0.5rem;
+
+    font-family: var(--font-demi);
+    font-size: clamp(18px, calc(-0.875rem + 8.333vw), 16px);
+    background-color: var(--white-color);
+
+    transition: 0.3s;
+}
+
+.input-form input:focus + label, 
+.input-form input:not(:placeholder-shown) + label,
+.input-form select:focus + label,
+.input-form select:valid + label {
+    top: -0.8rem;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Validations */
+.input-form::after {
+    content: "\f10b";
+    font-family: "icons";
+    color: transparent;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1.5rem;
+}
+
+.input-form:has(input.valid)::after {
+    color: var(--success-color);
+}
+
+.input-form::before {
+    content: "\f127";
+    font-family: "icons";
+    color: transparent;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    right: -1.5rem;
+}
+
+.input-form:has(input.invalid)::before {
+    color: var(--danger-color);
+}
+
+.input-form input.valid,
+.input-form select.valid {
+    border-color: var(--success-color);
+}
+
+.input-form input.valid,
+.input-form select.valid {
+    border-color: var(--success-color);
+}
+
+.input-form input.valid + label,
+.input-form select.valid + label {
+    color: var(--success-color);
+}
+
+.input-form input.valid:focus, 
+.input-form select.valid:focus {
+    outline-color: var(--success-color);
+}
+
+.input-form input.invalid,
+.input-form select.invalid {
+    border-color: var(--danger-color);
+}
+
+.input-form input.invalid,
+.input-form select.invalid {
+    border-color: var(--danger-color);
+}
+
+.input-form input.invalid + label,
+.input-form select.invalid + label {
+    color: var(--danger-color);
+}
+
+.input-form input.invalid:focus, 
+.input-form select.invalid:focus {
+    outline-color: var(--danger-color);
+}
+
+
+/* Select custom arrow */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select-wrapper::after { 
+    content: '\f103';
+    font-family: 'icons';
+    color: var(--black-color);
+    
+    position: absolute;
+    top: 56%;
+    right: 1rem;
+    pointer-events: none;
+}

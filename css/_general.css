@@ -1,0 +1,48 @@
+/* Estilos generales */
+*::selection {
+    background-color: var(--tertiary-color);
+    color: var(--black-color);
+}
+
+body {
+    font-family: var(--font-regular);
+}
+
+h1 {
+    font-family: var(--font-bold);
+    font-size: clamp(42px, calc(-0.875rem + 8.333vw), 52px);
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    font-family: var(--font-demi);
+    font-size: 18px;
+}
+
+.navbar-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.navbar-left img {
+    max-width: 180px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    
+}

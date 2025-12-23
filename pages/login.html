@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos críticos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página web -->
+    <title>Login - Pokédex UOC</title>
+
+    <!-- CSS y Favicon -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- JavaScript: dependencias y utilidades -->
+    <script src="../js/config.js" defer></script>
+    <script src="../js/encrypt.js" defer></script>
+    <script src="../js/session.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/alerts.js" defer></script>
+    <script src="../js/entities/user.js" defer></script>
+    <script src="../js/forms/validations.js" defer></script>
+
+    <!-- JavaScript: lógica de la página -->
+    <script src="../js/forms/login.js" defer></script>
+
+    <!-- Metadatos menos relevantes -->
+    <meta name="author" content="Marta Díez Casas">
+    <meta name="description" content="Inicia sesión para acceder a tu Pokédex.">
+</head>
+<body>
+    <div id="login-page" class="auth-layout">
+        <div class="auth-left">
+            <img class="auth-logo" src="../img/pokedex-uoc.svg" alt="Pokédex-UOC" />
+
+            <p class="auth-legal-info">🄯 2025. Creado por Marta Díez Casas</p>
+        </div>
+
+        <div class="auth-right-container">
+            <img id="pokeball" class="auth-pokeball" src="../img/pokeball.svg" alt="" />
+
+            <div class="auth-right">
+                <div class="login">
+                    <div class="auth-header">
+                        <h1>¡Hola de nuevo!</h1>
+                        <p>Inicia sesión para acceder a tu Pokédex</p>
+                    </div>
+        
+                    <form id="loginForm">
+                        <div class="input-form">
+                            <input type="text" id="username" name="username" placeholder="Nombre de usuario">
+                            <label for="username">Nombre de usuario</label>
+                        </div>
+        
+                        <div class="input-form">
+                            <input type="password" id="password" name="password" placeholder="Contraseña">
+                            <label for="password">Contraseña</label>
+                        </div>
+        
+                        <button class="btn primary-filled full" type="submit" id="loginButton"><span>Iniciar sesión</span></button>
+                    </form>
+                </div>
+    
+                <div class="auth-alternative">
+                    <p>¿No tienes cuenta?</p>
+                    <button type="button" id="toRegister" class="btn secondary-outlined full"><span>Regístrate</span></button>
+                    <!-- <a class="btn secondary-outlined full" href="register.html"><span>Regístrate</span></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert" class="alert danger">
+        <p id="alert-content">Texto informativo del alert.</p>
+        <a id="closeAlertButton">
+            <i class="icon icon_xmark"></i>
+        </a>
+    </div>
+</body>
+    <!-- <script src="../js/classes.js"></script>
+    <script src="../js/auth.js"></script> -->
+</html>
+

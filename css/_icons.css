@@ -1,0 +1,252 @@
+/* Icons font config*/
+.icon {
+    font-family: "icons";
+    font-weight: normal;
+    font-style: normal;
+
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    text-decoration: inherit;
+}
+
+.icon_add::before {
+    content: "\f101";
+}
+
+.icon_alert::before {
+    content: "\f102";
+}
+
+.icon_arrow_sm_down::before {
+    content: "\f103";
+}
+
+.icon_arrow_sm_left::before {
+    content: "\f104";
+}
+
+.icon_arrow_sm_right::before {
+    content: "\f105";
+}
+
+.icon_arrow_sm_up::before {
+    content: "\f106";
+}
+
+.icon_badges::before {
+    content: "\f107";
+}
+
+.icon_body::before {
+    content: "\f108";
+}
+
+.icon_cards::before {
+    content: "\f109";
+}
+
+.icon_cautionsymbol::before {
+    content: "\f10a";
+}
+
+.icon_check::before {
+    content: "\f10b";
+}
+
+.icon_checkmark::before {
+    content: "\f10c";
+}
+
+.icon_clothing::before {
+    content: "\f10d";
+}
+
+.icon_collection::before {
+    content: "\f10e";
+}
+
+.icon_create_avatar::before {
+    content: "\f10f";
+}
+
+.icon_double::before {
+    content: "\f110";
+}
+
+.icon_download::before {
+    content: "\f111";
+}
+
+.icon_event::before {
+    content: "\f112";
+}
+
+.icon_eye_closed::before {
+    content: "\f113";
+}
+
+.icon_eye_open::before {
+    content: "\f114";
+}
+
+.icon_female_symbol::before {
+    content: "\f115";
+}
+
+.icon_filter_height_large::before {
+    content: "\f116";
+}
+
+.icon_filter_height_medium::before {
+    content: "\f117";
+}
+
+.icon_filter_height_small::before {
+    content: "\f118";
+}
+
+.icon_filter_weight_large::before {
+    content: "\f119";
+}
+
+.icon_filter_weight_medium::before {
+    content: "\f11a";
+}
+
+.icon_filter_weight_small::before {
+    content: "\f11b";
+}
+
+.icon_friends::before {
+    content: "\f11c";
+}
+
+.icon_gender::before {
+    content: "\f11d";
+}
+
+.icon_hamburger::before {
+    content: "\f11e";
+}
+
+.icon_home::before {
+    content: "\f11f";
+}
+
+.icon_journal::before {
+    content: "\f120";
+}
+
+.icon_joystick::before {
+    content: "\f121";
+}
+
+.icon_male_symbol::before {
+    content: "\f122";
+}
+
+.icon_messages::before {
+    content: "\f123";
+}
+
+.icon_minusv::before {
+    content: "\f124";
+}
+
+.icon_multiply::before {
+    content: "\f125";
+}
+
+.icon_notepage::before {
+    content: "\f126";
+}
+
+.icon_plus::before {
+    content: "\f127";
+}
+
+.icon_points_champ::before {
+    content: "\f128";
+}
+
+.icon_points_game::before {
+    content: "\f129";
+}
+
+.icon_pokeball::before {
+    content: "\f12a";
+}
+
+.icon_pokedex_added::before {
+    content: "\f12b";
+}
+
+.icon_pokemontv::before {
+    content: "\f12c";
+}
+
+.icon_prize_bronze::before {
+    content: "\f12d";
+}
+
+.icon_prize_gold::before {
+    content: "\f12e";
+}
+
+.icon_prize_silver::before {
+    content: "\f12f";
+}
+
+.icon_refresh::before {
+    content: "\f130";
+}
+
+.icon_remove::before {
+    content: "\f131";
+}
+
+.icon_search::before {
+    content: "\f132";
+}
+
+.icon_settings::before {
+    content: "\f133";
+}
+
+.icon_trade::before {
+    content: "\f134";
+}
+
+.icon_videogame::before {
+    content: "\f135";
+}
+
+.icon_wishlist::before {
+    content: "\f136";
+}
+
+.icon_wrench::before {
+    content: "\f137";
+}
+
+.icon_news::before {
+    content: "\f138";
+}
+
+.icon_mobile::before {
+    content: "\f139";
+}
+
+.icon_go::before {
+    content: "\f13a";
+    margin-right: 30px;
+}
+
+.icon_xmark {
+    transform: rotate(45deg);
+}
+
+.icon_xmark::before {
+    content: "\f127";
+}

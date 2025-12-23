@@ -1,0 +1,119 @@
+/* Auth Layout */
+.auth-layout {
+    width: 100%;
+    min-height: 100dvh;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+}
+
+.auth-left {
+    position: relative;
+
+    background-color: var(--primary-color);
+    background-image: url('../img/container_bg.png');
+    background-repeat: repeat;
+    background-size: 25%;
+    background-position: top left;
+
+    width: 100%;
+    min-height: 100dvh;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-right-container {
+    position: relative;
+}
+
+.auth-right {
+    position: relative;
+
+    background-color: var(--white-color);
+    border-left: 16px solid var(--black-color);
+
+    width: 40%;
+    min-width: 678px;
+    max-width: 800px;
+
+    min-height: 100dvh;
+    min-height: 100vh;
+    max-height: 100dvh;
+    max-height: 100vh;
+
+    margin-left: auto;
+    margin-right: 0;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5rem;
+
+    overflow-y: auto;
+}
+
+.auth-right > div {
+    width: 70%;
+    max-width: 450px;
+    margin: auto;
+}
+
+.login .auth-header {
+    margin-bottom: 4rem;
+}
+
+.register .auth-header {
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    width: 70%;
+    max-width: 1200px;
+
+    filter: drop-shadow(var(--shadow-logo));
+}
+
+.auth-legal-info {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    color: var(--white-color);
+}
+
+.auth-pokeball {
+    position: absolute;
+    left: calc(-140px / 2);
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 152px;
+
+    z-index: 5;
+}
+
+.auth-alternative p {
+    margin-bottom: 1.5rem;
+}
+
+/* Register */
+.register .form-group .input-form:nth-child(1) {
+    width: 70%;
+}
+
+.register .form-group .input-form:nth-child(2) {
+    width: 30%;
+}

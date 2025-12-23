@@ -1,47 +1,10 @@
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0px;
-    padding: 0;
-    /*background-color: #e7e7e7; /* Fondo gris claro */
-    background-color: #dee2e6;
-    text-align: center;
-    background-image: url('../img/container_bg.png'); /* Patrón de fondo */
-}
 
 
 /* Estilos del menú superior */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(3, 37, 65); /* Color rojo de Marvel */
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
-}
+
 
 .navbar h1{
     color: #e9e4e4 ; /* Rojo de Marvel */
-}
-
-.navbar-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
-}
-.navbar-left img {
-    height: 40px; /* Ajusta la altura según sea necesario */
-    margin-bottom: 5px;
-}
-
-.navbar-right {
-    list-style: none;
-    margin: 0;
-    padding: 0 20px 0 0;
-    display: flex;
-    align-items: center;
 }
 
 .navbar-right li {
