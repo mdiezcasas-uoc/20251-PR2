@@ -21,10 +21,10 @@ let validations = {
 // Extrae y almacena las instancias de usuarios del localStorage.
 let users = Store.getUserInstances();
 
-// Mapeo del valor y verificación del input name.
+// Mapeo del valor y verificación del input username.
 const usernameInput = document.querySelector('#username');
 usernameInput?.addEventListener('input', (e) => {
-    formValues.username = e.target.value;
+    formValues.username = e.target.value.toLowerCase();
     validations.username = !isEmpty(e.target);
 });
 
@@ -41,13 +41,13 @@ const loginForm = document.querySelector('#loginForm');
 loginForm?.addEventListener('submit', onLoginSubmit);
 
 // Función que gestiona el envío del formulario de login.
-function onLoginSubmit(e) {
+async function onLoginSubmit(e) {
     e.preventDefault();  // Previene la navegación por defecto del formulario.
 
     // Verifica que la cantidad de campos existentes para la validación es la misma que 
     // la cantidad de campos válidos, asegurando que no falta nada.
     // En caso de no coincidir, se informa al usuario. 
-    if (Object.entries(validations).length != Object.values(validations).filter(valid => valid == true).length) {
+    if (Object.entries(validations).length != Object.values(validations).filter(valid => valid === true).length) {
         showAlert('Por favor, rellena todos los campos del formulario para iniciar sesión.', 'warning');
         validations.username = false;
         validations.password = false;
@@ -68,7 +68,14 @@ function onLoginSubmit(e) {
             toggleClass(usernameInput, true);
             toggleClass(passwordInput, true);
 
-            Store.setActiveUser(foundUser); // Se almacena el usuario en sesión.
+            mostrarLoader();
+
+            // Carga información desde la API si el usuario
+            // aún no tiene los datos en su navegador.
+            await loader();
+
+            // Se almacena el usuario en sesión.
+            Store.setActiveUser(foundUser);
 
             // Se espera 1 segundo y se redirecciona al usuario a la página
             // correspondiente.
@@ -89,14 +96,14 @@ function onLoginSubmit(e) {
     }
 }
 
+// Función para mostrar el loader y desenfocar la pantalla
+function mostrarLoader() {
+    document.getElementById('loader').style.display = 'block';  // Mostrar el spinner
+    document.body.classList.add('loading');  // Añadir clase para desenfocar el contenido
+}
 
-/* Añadir las funciones que consideréis necesarias*/
-
-    // Si hay un usuario logeado, redirigimos a la página indice de Pokemons
-    //...
-
-    // Si no hay un usuario logeado, comprobamos datos de login
-    //...
-
-    // Al pulsar el boton redirigimos a la página de registro
-    //...
+// Función para ocultar el loader y eliminar el desenfoque
+function ocultarLoader() {
+    document.getElementById('loader').style.display = 'none';  // Ocultar el spinner
+    document.body.classList.remove('loading');  // Eliminar la clase de desenfoque
+}

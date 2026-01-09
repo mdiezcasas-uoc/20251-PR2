@@ -1,0 +1,133 @@
+
+.card-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+
+    width: 100%;
+}
+
+.card {
+    position: relative;
+
+    max-width: 320px;
+    width: calc(25% - 15px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+
+    transform: scale(0.98);
+    transition: 0.2s;
+}
+
+@media (hover: hover) {
+    .card:hover {
+        transform: scale(1);
+        transition: 0.2s;
+    }
+}
+
+.card .actions {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.8rem;
+}
+
+.card .actions button {
+    font-size: var(--font-size-biggest);
+    color: var(--grey-color);
+
+    cursor: pointer;
+}
+
+.card .content, .card .textContent {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.6rem;
+}
+
+.card img {
+    margin-top: 1rem;
+}
+
+.card .id {
+    font-family: var(--font-demi);
+    color: var(--grey-color);
+    font-size: var(--font-size-smaller);
+}
+
+.card .name {
+    font-family: var(--font-demi);
+    color: var(--black-color);
+    font-size: var(--font-size-bigger);
+}
+
+.card .types {
+    gap: 0.625rem;
+}
+
+@media (max-width: 1320px) {
+    .card {
+        max-width: none;
+        width: calc(33% - 11px);
+    }
+}
+
+@media (max-width: 970px) {
+    .card {
+        width: calc(50% - 11px);
+    }
+}
+
+@media (max-width: 640px) {
+    .card-list {
+        gap: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px;
+        transform: scale(1);
+    }
+
+    .card .content {
+        flex-flow: row nowrap;
+        gap: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .card img {
+        min-width: 123px;
+        max-width: 123px;
+        margin-top: 0;
+    }
+
+    .card .textContent {
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .card .types {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .card img {
+        min-width: 100px;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 350px) {
+    .card img {
+        min-width: 85px;
+        max-width: 85px;
+    }
+}

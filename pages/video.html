@@ -10,7 +10,6 @@
 
     <!-- CSS y Favicon -->
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
     <!-- JavaScript: dependencias y utilidades -->
@@ -21,56 +20,91 @@
     <script src="../js/entities/user.js" defer></script>
 
     <!-- JavaScript -->
-    <!-- <script src="../js/pokemons.js" defer></script> -->
+    <script src="../js/menu.js" defer></script>
 
     <!-- Metadatos menos relevantes -->
     <meta name="author" content="Marta Díez Casas">
     <meta name="description" content="Vídeo">
 </head>
 <body>
-    <!-- Menú superior -->
+    <!-- Navbar -->
     <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <a href="index.html">
-                    <img src="../img/pokedex-uoc.svg" alt="Pokédex UOC Logo" />
-                </a>
+        <nav>
+            <div class="navbar-content">
+                <div class="navbar-left">
+                    <a href="index.html">
+                        <img src="../img/pokedex-uoc.svg" alt="Pokédex UOC Logo" />
+                    </a>
+                </div>
+
+                <button class="menu-button" aria-label="Botón que abre el menú">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.00001 36C7.43334 36 6.95867 35.808 6.57601 35.424C6.19334 35.04 6.00134 34.5653 6.00001 34C5.99867 33.4347 6.19067 32.96 6.57601 32.576C6.96134 32.192 7.43601 32 8.00001 32H40C40.5667 32 41.042 32.192 41.426 32.576C41.81 32.96 42.0013 33.4347 42 34C41.9987 34.5653 41.8067 35.0407 41.424 35.426C41.0413 35.8113 40.5667 36.0027 40 36H8.00001Z" fill="white"/>
+                        <path d="M6.57601 25.424C6.95867 25.808 7.43334 26 8.00001 26H40C40.5667 26.0027 41.0413 25.8113 41.424 25.426C41.8067 25.0407 41.9987 24.5653 42 24C42.0013 23.4347 41.81 22.96 41.426 22.576C41.042 22.192 40.5667 22 40 22H8.00001C7.43601 22 6.96134 22.192 6.57601 22.576C6.19067 22.96 5.99867 23.4347 6.00001 24C6.00134 24.5653 6.19334 25.04 6.57601 25.424Z" fill="white"/>
+                        <path d="M6.57601 15.424C6.95867 15.808 7.43334 16 8.00001 16H40C40.5667 16.0027 41.0413 15.8113 41.424 15.426C41.8067 15.0407 41.9987 14.5653 42 14C42.0013 13.4347 41.81 12.96 41.426 12.576C41.042 12.192 40.5667 12 40 12H8.00001C7.43601 12 6.96134 12.192 6.57601 12.576C6.19067 12.96 5.99867 13.4347 6.00001 14C6.00134 14.5653 6.19334 15.04 6.57601 15.424Z" fill="white"/>
+                    </svg>
+                </button>
+
+                <ul class="navbar-right">
+                    <li>
+                        <a href="index.html">
+                            <i class="icon icon-pokemon-outlined"></i>
+                            Pokemons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lists.html?team">
+                            <i class="icon icon-pokeball-outlined"></i>
+                            Mi equipo
+                            <span>|</span>
+                            <span id="team-count">0/6</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lists.html?wishlist">
+                            <i class="icon icon-heart-outlined"></i>
+                            Lista de deseos
+                            <span>|</span>
+                            <span id="wishlist-count">0</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="video.html">
+                            <i class="icon icon-film-outlined"></i>
+                            Video
+                        </a>
+                    </li> 
+
+                    <li class="dropdown">
+                        <a href="#" id="user-id">
+                            <i class="icon icon-user"></i>
+                            Usuario
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#" id="logoutButton">Logout</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="navbar-right">
-                <li><a href="index.html">Pokemons</a></li>
-                <li><a href="lists.html">Listas
-                    <i class="fa-solid fa-heart"></i> <span style="font-size: 0.6em;" id="myTeamCount"></span>
-                    <i class="fa-solid fa-eye"></i> <span style="font-size: 0.6em;" id="wishesCount"></span>
-                <li><a href="/video.html">Video</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn" id="menuButton">Usuario</a>
-                    <div class="dropdown-content">
-                        <a href="#" id="logoutButton">Logout</a>
-                    </div>
-                </li>
-            </ul>
         </nav>
     </header>
 
-    <h1>Video explicativo</h1>
+    <main class="video">
+        <h1>Video explicativo</h1>
+    
+        <video width="100%" height="100%" controls>
+            <source src="../video/video_pr2.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </main>
 
-    <div id="VideoContainer">
-        <p>En este apartado incluiréis el video explicativo del trabajo realizado,
-            donde tendréis que incidir en los principales problemas que se os han generado
-            y en la manera en la que los habéis enfocado.</p>
-    </div>
-
+    <!-- Alert -->
     <div id="alert" class="alert danger">
         <p id="alert-content">Texto informativo del alert.</p>
         <a id="closeAlertButton">
-            <i class="icon icon_xmark"></i>
+            <i class="icon icon-xmark"></i>
         </a>
     </div>
-
 </body>
-    <!-- <script src="../js/config.js"></script>
-    <script src="../js/clases.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/aux.js"></script>
-    <script src="../js/details.js"></script> -->
 </html>

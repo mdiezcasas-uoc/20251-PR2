@@ -8,9 +8,15 @@ body {
     font-family: var(--font-regular);
 }
 
+main {
+    width: 80%;
+    max-width: 1342px;
+    margin: calc(80px + 40px) auto calc(80px - 40px);
+}
+
 h1 {
     font-family: var(--font-bold);
-    font-size: clamp(42px, calc(-0.875rem + 8.333vw), 52px);
+    font-size: var(--font-size-jumbo);
     line-height: 1.5;
 }
 
@@ -18,31 +24,56 @@ img {
     width: 100%;
 }
 
-nav {
+.types {
     display: flex;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
-    font-family: var(--font-demi);
-    font-size: 18px;
+    flex-flow: row nowrap;
 }
 
-.navbar-left {
+.pokemon-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
-}
-
-.navbar-left img {
-    max-width: 180px;
-}
-
-.navbar-right {
-    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
     align-items: center;
-    
+    gap: 40px;
+}
+
+.voidList {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-normal);
+    color: var(--grey-dark-color);
+}
+
+.video h1 {
+    margin-bottom: 1.5rem;
+}
+
+video {
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+}
+
+@media (max-width: 1100px) {
+    main {
+        margin: calc(70px + 20px) auto calc(70px - 20px);
+    }
+}
+
+@media (max-width: 960px) {
+    video {
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: 55% center;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        /* margin: calc(70px + 20px) auto calc(70px - 20px); */
+        width: 90%;
+    }
+
+    .video h1 {
+        margin-bottom: 1rem;
+    }
 }

@@ -1,6 +1,8 @@
+
 class Pokemon {
     #id;
     #name;
+    #display;
     #height;
     #weight;
     #baseExperience;
@@ -9,11 +11,15 @@ class Pokemon {
     #sprites;
     #stats;
     #description;
+    #category;
+    #hasGenderDifferences;
+    #evolutions;
 
     /* Constructor de la clase Pokemon */
-    constructor({ id, name, description, height, weight, baseExperience, abilities, types, sprites, stats }) {
+    constructor({ id, name, display, description, height, weight, baseExperience, abilities, types, sprites, stats, category, hasGenderDifferences, evolutions }) {
         this.setId = id;
         this.setName = name;
+        this.setDisplay = display;
         this.setDescription = description;
         this.setHeight = height;
         this.setWeight = weight;
@@ -22,6 +28,9 @@ class Pokemon {
         this.setTypes = types;
         this.setSprites = sprites;
         this.setStats = stats;
+        this.setCategory = category;
+        this.setHasGenderDifferences = hasGenderDifferences;
+        this.setEvolutions = evolutions;
     }
 
     /* Getters y Setters */
@@ -39,6 +48,14 @@ class Pokemon {
 
     set setName(name) {
         this.#name = name;
+    }
+
+    get getDisplay() {
+        return this.#display;
+    }
+
+    set setDisplay(display) {
+        this.#display = display;
     }
 
     get getDescription() {
@@ -105,13 +122,58 @@ class Pokemon {
         this.#stats = stats;
     }
 
-
-    /* Añadir las funciones que consideréis necesarias*/   
-    toJSON() {
-        //...
+    get getCategory() {
+        return this.#category;
     }
 
-    fromJSON(pokemons) {
-        //...
+    set setCategory(category) {
+        this.#category = category;
+    }
+    
+    get getHasGenderDifferences() {
+        return this.#hasGenderDifferences;
+    }
+
+    set setHasGenderDifferences(hasGenderDifferences) {
+        this.#hasGenderDifferences = hasGenderDifferences;
+    }
+
+    get getEvolutions() {
+        return this.#evolutions;
+    }
+
+    set setEvolutions(evolutions) {
+        this.#evolutions = evolutions;
+    }
+
+    /**
+     * Método que permite extraer valores específicos por índice de ciertos
+     * atributos internos iterables.
+     * Recibe el nombre del atributo y el índice, en caso de no encontrar registro,
+     * devuelve un string vacío.
+     */
+    getAttributeByIndex(attributeType, index) {
+
+        let attribute;
+
+        switch (attributeType) {
+            case 'sprites':
+                attribute = this.getSprites;
+                break;
+            case 'description':
+                attribute = this.getDescription;
+                break;
+            case 'abilities':
+                attribute = this.getAbilities;
+                break;
+            default:
+                attribute = [];
+        }
+
+        if (attribute.length > 0 && index < attribute.length) {
+            return attribute[index] || '';
+        }
+
+        return '';
     }
 }

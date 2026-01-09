@@ -10,70 +10,286 @@
 
     <!-- CSS y Favicon -->
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
-    <!-- JavaScript: dependencias y utilidades -->
+   <!-- JavaScript: dependencias y utilidades -->
     <script src="../js/config.js" defer></script>
     <script src="../js/session.js" defer></script>
     <script src="../js/storage.js" defer></script>
     <script src="../js/alerts.js" defer></script>
     <script src="../js/entities/user.js" defer></script>
-
+    <script src="../js/entities/pokemon.js" defer></script>
+    <script src="../js/entities/pokemonlist.js" defer></script>
+    <script src="../js/utils.js" defer></script>
+    <script src="../js/actions.js" defer></script>
+    
     <!-- JavaScript -->
-    <script src="../js/detail.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/pages/detail.js" defer></script>
 
     <!-- Metadatos menos relevantes -->
     <meta name="author" content="Marta Díez Casas">
     <meta name="description" content="Detalle de pokemon">
 </head>
 <body>
-    <!-- Menú superior -->
+    <!-- Navbar -->
     <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-                <a href="index.html">
-                    <img src="../img/pokedex-uoc.svg" alt="Pokédex UOC Logo" />
-                </a>
+        <nav>
+            <div class="navbar-content">
+                <div class="navbar-left">
+                    <a href="index.html">
+                        <img src="../img/pokedex-uoc.svg" alt="Pokédex UOC Logo" />
+                    </a>
+                </div>
+
+                <button class="menu-button" aria-label="Botón que abre el menú">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.00001 36C7.43334 36 6.95867 35.808 6.57601 35.424C6.19334 35.04 6.00134 34.5653 6.00001 34C5.99867 33.4347 6.19067 32.96 6.57601 32.576C6.96134 32.192 7.43601 32 8.00001 32H40C40.5667 32 41.042 32.192 41.426 32.576C41.81 32.96 42.0013 33.4347 42 34C41.9987 34.5653 41.8067 35.0407 41.424 35.426C41.0413 35.8113 40.5667 36.0027 40 36H8.00001Z" fill="white"/>
+                        <path d="M6.57601 25.424C6.95867 25.808 7.43334 26 8.00001 26H40C40.5667 26.0027 41.0413 25.8113 41.424 25.426C41.8067 25.0407 41.9987 24.5653 42 24C42.0013 23.4347 41.81 22.96 41.426 22.576C41.042 22.192 40.5667 22 40 22H8.00001C7.43601 22 6.96134 22.192 6.57601 22.576C6.19067 22.96 5.99867 23.4347 6.00001 24C6.00134 24.5653 6.19334 25.04 6.57601 25.424Z" fill="white"/>
+                        <path d="M6.57601 15.424C6.95867 15.808 7.43334 16 8.00001 16H40C40.5667 16.0027 41.0413 15.8113 41.424 15.426C41.8067 15.0407 41.9987 14.5653 42 14C42.0013 13.4347 41.81 12.96 41.426 12.576C41.042 12.192 40.5667 12 40 12H8.00001C7.43601 12 6.96134 12.192 6.57601 12.576C6.19067 12.96 5.99867 13.4347 6.00001 14C6.00134 14.5653 6.19334 15.04 6.57601 15.424Z" fill="white"/>
+                    </svg>
+                </button>
+
+                <ul class="navbar-right">
+                    <li>
+                        <a href="index.html">
+                            <i class="icon icon-pokemon-outlined"></i>
+                            Pokemons
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lists.html?team">
+                            <i class="icon icon-pokeball-outlined"></i>
+                            Mi equipo
+                            <span>|</span>
+                            <span id="team-count">0/6</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lists.html?wishlist">
+                            <i class="icon icon-heart-outlined"></i>
+                            Lista de deseos
+                            <span>|</span>
+                            <span id="wishlist-count">0</span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="video.html">
+                            <i class="icon icon-film-outlined"></i>
+                            Video
+                        </a>
+                    </li> 
+
+                    <li class="dropdown">
+                        <a href="#" id="user-id">
+                            <i class="icon icon-user"></i>
+                            Usuario
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#" id="logoutButton">Logout</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="navbar-right">
-                <li><a href="index.html">Pokemons</a></li>
-                <li><a href="lists.html">Listas
-                    <i class="fa-solid fa-heart"></i> <span style="font-size: 0.6em;" id="myTeamCount"></span>
-                    <i class="fa-solid fa-eye"></i> <span style="font-size: 0.6em;" id="wishesCount"></span>
-                <li><a href="video.html">Video</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn" id="menuButton">Usuario</a>
-                    <div class="dropdown-content">
-                        <a href="#" id="logoutButton">Logout</a>
-                    </div>
-                </li>
-            </ul>
         </nav>
     </header>
 
-    <main>
-      <div style="  display: flex;  justify-content: center;">
-        <div id="pokemonDetail" class="pokedex-card">
-          <p>Cargando...</p>
+    <main class="detail">
+        <header>
+            <div class="left">
+                <button id="go-back" aria-label="Volver al listado de Pokémons">
+                    <img src="../img/arrow-back.svg" alt="">
+                </button>
+ 
+                <div class="name">
+                    <h1 id="pokemon-detail-name">Pokemon name</h1>
+                    <h2 id="pokemon-detail-id">Nº. 0001</h2>
+                </div>
+            </div>
+            <div id="pokemon-detail-gender-differences" class="right">
+                <div id="pokemon-detail-gender-differences-male" class="male active">
+                    <i class="icon icon-pokeball"></i>
+                </div>
+                <div id="pokemon-detail-gender-differences-female" class="female">
+                    <i class="icon icon-pokeball"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="left">
+                <div class="image">
+                    <img id="pokemon-detail-image" src="" alt="">
+                </div>
+                <div id="pokemon-detail-attributes" class="attributes">
+                    <div class="attribute-group">
+                        <p>Altura</p>
+                        <p id="pokemon-detail-height">0 m</p>
+                    </div>
+
+                    <div class="attribute-group">
+                        <p>Categoría</p>
+                        <p id="pokemon-detail-category">Categoría</p>
+                    </div>
+
+                    <div class="attribute-group">
+                        <p>Peso</p>
+                        <p id="pokemon-detail-weight">0 kg</p>
+                    </div>
+
+                    <div class="attribute-group">
+                        <p>Habilidad</p>
+                        <button id="pokemon-detail-show-ability-detail" type="button" aria-label="Saber más">
+                            <span id="pokemon-detail-ability"></span>
+                            <i class="icon icon-question-mark"></i>
+                        </button>
+                    </div>
+
+                    <div class="ability-detail">
+                        <div class="title">
+                            <h3 id="pokemon-detail-ability-detail-name">Habilidad</h3>
+                            <button id="pokemon-detail-hide-ability-detail" type="button" aria-label="Cerrar">
+                                <i class="icon icon-xmark"></i>
+                            </button>
+                        </div>
+                        <p id="pokemon-detail-ability-detail-description">Descripción de la habilidad.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <p id="pokemon-detail-description" class="description">Descripción del Pokémon.</p>
+
+                <div id="pokemon-detail-types" class="type">
+                    <h3>Tipo</h3>
+                </div>
+
+                <div id="pokemon-detail-weakness" class="vulnerability">
+                    <h3>Debilidad</h3>
+                </div>
+
+                <div class="stats">
+                    <h3>Puntos base</h3>
+                    <div class="stats-container">
+                        <ul id="hp">
+                            <li class="stat-name">PS</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul id="attack">
+                            <li class="stat-name">Ataque</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul id="defense">
+                            <li class="stat-name">Defensa</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul id="special-attack">
+                            <li class="stat-name">Ataque esp.</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul id="special-defense">
+                            <li class="stat-name">Defensa esp.</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul id="speed">
+                            <li class="stat-name">Velocidad</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-       <div>
-            <button id="backButton" class="back-button">← Volver al listado</button>
+        <div class="evolutions">
+            <h3>Evoluciones</h3>
+            <div id="pokemon-detail-evolutions" class="evolution-chain"></div>
         </div>
     </main>
 
+    <!-- Alert -->
     <div id="alert" class="alert danger">
         <p id="alert-content">Texto informativo del alert.</p>
         <a id="closeAlertButton">
-            <i class="icon icon_xmark"></i>
+            <i class="icon icon-xmark"></i>
         </a>
     </div>
-
-    <!-- <script src="../js/config.js"></script>
-    <script src="../js/clases.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/aux.js"></script>
-    <script src="../js/detail.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,609 @@
+
+/* Header layout */
+.detail > header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.detail > header .left, .detail > header .left .name {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.detail > header .right {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.detail #go-back {
+    cursor: pointer;
+}
+
+
+/* Name and id */
+.detail h1 {
+    font-family: var(--font-bold);
+    font-size: var(--font-size-largest);
+}
+
+.detail h2 {
+    font-family: var(--font-medium);
+    font-size: var(--font-size-larger);
+    color: var(--grey-color);
+}
+
+
+/* Gender selector */
+.detail > header .right div {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.male {
+    outline: 4px solid transparent;
+    color: var(--male-color);
+    transition: 0.2s;
+}
+
+.female {
+    outline: 4px solid transparent;
+    color: var(--female-color);
+    transition: 0.2s;
+}
+
+.male:hover, .male.active {
+    outline: 4px solid color-mix(in srgb, var(--male-color), transparent 50%);
+    transition: 0.2s;
+}
+
+.female:hover, .female.active {
+    outline: 4px solid color-mix(in srgb, var(--female-color), transparent 50%);
+    transition: 0.2s;
+}
+
+.detail > header .right div i {
+    font-size: 33px;
+    cursor: pointer;
+    transform: translateY(2.5px) translateX(0.5px);
+}
+
+
+/* Content layout */
+.detail .content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 2rem 5rem;
+
+    margin: 40px 0;
+}
+
+.detail .content .left, .detail .content .right {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+/* Content left layout */
+.detail .content .left {
+    max-width: 564px;
+    min-width: calc(40% - 2.5rem);
+    width: calc(40% - 2.5rem);
+}
+
+.detail .content .left > div {
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.detail .content .left .image {
+    background-color: var(--grey-lightest-color);
+}
+
+.detail .content .left .attributes {
+    position: relative;
+    background-color: var(--secondary-light-color);
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem 0.5rem;
+}
+
+.detail .content .left .attributes > .ability-detail {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color-mix(in srgb, var(--black-color), transparent 10%);
+    border-radius: 10px;
+    padding: 40px;
+
+    color: var(--white-color);
+    font-size: var(--font-size-normal);
+    line-height: 150%;
+}
+
+.detail .content .left .attributes > .ability-detail .title {
+    position: relative;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+
+    font-size: var(--font-size-big);
+    margin-bottom: 2rem;
+}
+
+.detail .content .left .attributes > .ability-detail .title button {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+
+    font-size: var(--font-size-medium-larger);
+    cursor: pointer;
+}
+
+.detail .content .left .attributes.show-ability-detail > .ability-detail {
+    display: block;
+}
+
+.detail .content .left .attributes .attribute-group:nth-child(4) button {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-family: var(--font-demi);
+    font-size: var(--font-size-big);
+    color: var(--black-color);
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.detail .content .left .attributes .attribute-group:nth-child(4) button i {
+    margin-top: 0.5rem;
+}
+
+.attribute-group {
+    width: calc(50% - 0.5rem);
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.625rem;
+}
+
+.attribute-group p:first-child {
+    font-family: var(--font-regular);
+    font-size: var(--font-size-normal);
+    color: var(--white-color);
+}
+
+.attribute-group p:last-child {
+    font-family: var(--font-demi);
+    font-size: var(--font-size-big);
+    color: var(--black-color);
+}
+
+
+
+/* Content right layout */
+.detail .content .right {
+    min-width: calc(60% - 2.5rem);
+    width: calc(60% - 2.5rem);
+}
+
+.detail .content .right .description {
+    font-family: var(--font-regular);
+    font-size: var(--font-size-medium);
+    line-height: 150%;
+}
+
+.detail .content .right h3 {
+    font-family: var(--font-bold);
+    font-size: var(--font-size-medium);
+    line-height: 150%;
+    margin-bottom: 0.25rem;
+}
+
+.detail .content .right .type,
+.detail .content .right .vulnerability,
+.detail .content .right .stats {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.detail .types {
+    gap: 0.625rem;
+}
+
+.detail .content .right .stats-container {
+    width: 100%;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: var(--grey-light-color);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.detail .content .right .stats-container ul {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    width: calc(16% - 0.5rem);
+}
+
+.detail .content .right .stats-container ul li.stat-name {
+    font-family: var(--font-bold);
+    font-size: var(--font-size-small);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.detail .content .right .stats-container ul li:not(.stat-name) {
+   display: block;
+   background-color: var(--white-color);
+   width: 100%;
+   height: 15px;
+   border-radius: 8px;
+}
+
+.detail .content .right .stats-container ul li:not(.stat-name).active {
+   background-color: var(--secondary-light-color);
+}
+
+
+/* Evolution content layout */
+.detail .evolutions {
+    position: relative;
+
+    background-color: var(--grey-dark-color);
+    border-radius: 10px;
+
+    background-image: url('../img/container_bg.png');
+    background-repeat: repeat;
+    background-size: 25%;
+    background-position: top left;
+
+    padding: 40px 40px 40px 40px;
+
+    color: var(--white-color);
+}
+
+.detail .evolutions::before {
+    content: '';
+    position: absolute;
+    left: -2.25rem;
+    bottom: -2.25em;
+
+    border: 2em solid transparent;
+    border-right: 2em solid var(--white-color);
+
+    height: 2em;
+    width: 2em;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+
+.detail .evolutions h3 {
+    font-family: var(--font-bold);
+    font-size: var(--font-size-large);
+    line-height: 150%;
+    color: var(--white-color);
+}
+
+.detail .evolution-chain {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    width: 80%;
+    margin: 40px auto;
+}
+
+.detail .evolution-chain .divider {
+    min-width: 50px;
+}
+
+.detail .evolution-chain .divider:last-child {
+    display: none;
+}
+
+.detail .evolution-chain .pokemon {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.625rem;
+
+    max-width: 200px;
+    width: calc(33% - 50px - 1rem);
+}
+
+@media (hover: hover) {
+    .detail .evolution-chain .pokemon:hover .image {
+        transform: scale(1);
+        filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.25));
+        transition: 0.2s;
+    } 
+}
+
+.detail .evolution-chain .pokemon .image {
+    background-color: var(--grey-color);
+    border: 8px solid var(--white-color);
+    border-radius: 100%;
+    padding: 26px;
+
+    aspect-ratio: 1 / 1;
+
+    transform: scale(0.95);
+    transition: 0.2s;
+}
+
+.detail .evolution-chain .pokemon .image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detail .evolution-chain .pokemon .name {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.detail .evolution-chain .pokemon .name p:first-child {
+    font-family: var(--font-demi);
+    font-size: var(--font-size-medium-large);
+}
+
+.detail .evolution-chain .pokemon .name p:last-child {
+    font-family: var(--font-regular);
+    font-size: var(--font-size-small);
+    white-space: nowrap;
+
+    color: var(--grey-light-color);
+}
+
+.detail .evolution-chain .pokemon .types {
+    width: 100%;
+}
+
+
+@media (max-width: 1400px) {
+    .detail .content {
+        gap: 2rem 3rem;
+    }
+
+    .detail .content .left {
+        min-width: calc(40% - 1.5rem);
+        width: calc(40% - 1.5rem);
+    }
+
+    .detail .content .right {
+        min-width: calc(60% - 1.5rem);
+        width: calc(60% - 1.5rem);
+    }
+
+    .detail .content .right .stats-container {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1250px) {
+    .detail .content {
+        gap: 2rem 2.5rem;
+    }
+
+    .detail .content .left {
+        min-width: calc(40% - 1.25rem);
+        width: calc(40% - 1.25rem);
+    }
+
+    .detail .content .right {
+        min-width: calc(60% - 1.25rem);
+        width: calc(60% - 1.25rem);
+    }
+
+    .detail .content .right .stats-container {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    .detail .evolution-chain {
+        flex-flow: column nowrap;
+    }
+    
+    .detail .evolution-chain .divider {
+        transform: rotate(90deg);
+    }
+
+    .detail .evolution-chain .pokemon {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.625rem;
+
+        max-width: 200px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .detail .content {
+        flex-flow: column nowrap;
+        gap: 2rem 0;
+    }
+
+    .detail .content .left {
+        min-width: 100%;
+        width: 100%;
+
+        flex-flow: row nowrap;
+    }
+
+    .detail .content .right {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .detail .content .left .attributes {
+        min-width: 50%;
+        align-items: center;
+    }
+
+    .attribute-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .detail .content .left > div.image {
+        padding: 20px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .detail .content {
+        margin: 20px 0;
+    }
+
+    .detail .content .left {
+        flex-flow: column nowrap;
+    }
+
+    .detail > header, 
+    .detail > header .left, 
+    .detail > header .left .name {
+        gap: 1rem;
+    }
+
+    .detail > header .left {
+        align-items: flex-start;
+    }
+
+    .detail > header .left .name {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .detail > header .right div i {
+        transform: translateY(2px) translateX(0.5px);
+    }
+
+    .detail #go-back {
+        width: 38px;
+    }
+
+    .detail .content .right {
+        gap: 1.5rem;
+    }
+
+    .detail .types {
+        flex-flow: row wrap;
+    }
+
+    .detail .content .left .attributes {
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .attribute-group {
+        width: calc(50% - 0.5rem);
+    }
+
+    .detail .content .right .stats-container {
+        padding: 30px;
+    }
+}
+
+
+/* Attributes responsive */
+@media (max-width: 1400px) and (min-width: 1249px) {
+    .detail .content .right .stats-container ul {
+        width: calc(20% - 0.5rem);
+    }
+}
+
+@media (max-width: 1250px) and (min-width: 1023px) {
+    .detail .content .right .stats-container ul {
+        width: calc(25% - 0.5rem);
+    }
+}
+
+@media (max-width: 1024px){
+    .detail .content .right .stats-container {
+        justify-content: space-between;
+    }
+
+    .detail .content .right .stats-container ul {
+        width: calc(16% - 0.5rem);
+    }
+}
+
+@media (max-width: 800px) {
+    .detail .content .right .stats-container {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 709px) {
+    .detail .content .right .stats-container ul {
+        width: calc(20% - 0.5rem);
+    }
+}
+
+@media (max-width: 710px) and (min-width: 640px) {
+    .detail .content .right .stats-container ul {
+        width: calc(25% - 0.5rem);
+    }
+}
+
+@media (max-width: 640px) {
+    .detail .content .right .stats-container ul {
+        width: calc(33% - 0.5rem);
+    }
+}

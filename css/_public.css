@@ -84,6 +84,7 @@
 .auth-logo {
     width: 70%;
     max-width: 1200px;
+    min-width: 400px;
 
     filter: drop-shadow(var(--shadow-logo));
 }
@@ -93,6 +94,8 @@
     left: 2rem;
     bottom: 2rem;
     color: var(--white-color);
+
+    z-index: 2;
 }
 
 .auth-pokeball {
@@ -100,6 +103,7 @@
     left: calc(-140px / 2);
     top: 50%;
     transform: translateY(-50%);
+    transform-origin: center center;
     max-width: 152px;
 
     z-index: 5;
@@ -117,3 +121,122 @@
 .register .form-group .input-form:nth-child(2) {
     width: 30%;
 }
+
+@media (max-width: 1300px) {
+    .auth-right-container {
+        width: 100%;
+    }
+
+    .auth-right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .auth-pokeball {
+        left: calc(-105px / 2);
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 1140px) and (min-width: 1026px) {
+    /* Register */
+    .register .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register .form-group .input-form:nth-child(1) {
+        width: 100%;
+    }
+
+    .register .form-group .input-form:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .auth-layout {
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        /* margin-bottom: 2rem; */
+    }
+
+    .auth-left {
+        position: static;
+        min-height: 0;
+        padding: 2rem 0 4rem;
+    }
+
+    .auth-right-container {
+        width: 100%;
+    }
+
+    .auth-right {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        max-height: none;
+        border: 0 solid transparent;
+        border-top: 1vw solid var(--black-color);
+    }
+
+    .auth-right > div {
+        width: 70%;
+        max-width: none;
+    }
+
+    .auth-logo {
+        min-width: 0;
+    }
+
+    .auth-pokeball {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+
+        width: 25vw;
+        min-width: 72px;
+    }
+
+    .auth-legal-info {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .login .auth-header {
+        margin-bottom: 2rem;
+    }
+
+    .auth-logo {
+        width: 80%;
+    }
+
+    .auth-right {
+        gap: 3rem;
+        border-top: 2vw solid var(--black-color);
+    }
+
+    .auth-right > div {
+        width: 85%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 420px) {
+    /* Register */
+    .register .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register .form-group .input-form:nth-child(1) {
+        width: 100%;
+    }
+
+    .register .form-group .input-form:nth-child(2) {
+        width: 100%;
+    }
+}
+

@@ -8,245 +8,289 @@
     vertical-align: middle;
     line-height: 1;
     text-decoration: inherit;
+    color: inherit;
+
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon_add::before {
+.icon-add::before {
     content: "\f101";
 }
 
-.icon_alert::before {
+.icon-alert::before {
     content: "\f102";
 }
 
-.icon_arrow_sm_down::before {
+.icon-arrow_sm_down::before {
     content: "\f103";
 }
 
-.icon_arrow_sm_left::before {
+.icon-arrow_sm_left::before {
     content: "\f104";
 }
 
-.icon_arrow_sm_right::before {
+.icon-arrow_sm_right::before {
     content: "\f105";
 }
 
-.icon_arrow_sm_up::before {
+.icon-arrow_sm_up::before {
     content: "\f106";
 }
 
-.icon_badges::before {
+.icon-badges::before {
     content: "\f107";
 }
 
-.icon_body::before {
+.icon-body::before {
     content: "\f108";
 }
 
-.icon_cards::before {
+.icon-cards::before {
     content: "\f109";
 }
 
-.icon_cautionsymbol::before {
+.icon-cautionsymbol::before {
     content: "\f10a";
 }
 
-.icon_check::before {
+.icon-check::before {
     content: "\f10b";
 }
 
-.icon_checkmark::before {
+.icon-checkmark::before {
     content: "\f10c";
 }
 
-.icon_clothing::before {
+.icon-clothing::before {
     content: "\f10d";
 }
 
-.icon_collection::before {
+.icon-collection::before {
     content: "\f10e";
 }
 
-.icon_create_avatar::before {
+.icon-create_avatar::before {
     content: "\f10f";
 }
 
-.icon_double::before {
+.icon-double::before {
     content: "\f110";
 }
 
-.icon_download::before {
+.icon-download::before {
     content: "\f111";
 }
 
-.icon_event::before {
+.icon-event::before {
     content: "\f112";
 }
 
-.icon_eye_closed::before {
+.icon-eye_closed::before {
     content: "\f113";
 }
 
-.icon_eye_open::before {
+.icon-eye_open::before {
     content: "\f114";
 }
 
-.icon_female_symbol::before {
+.icon-female_symbol::before {
     content: "\f115";
 }
 
-.icon_filter_height_large::before {
+.icon-filter_height_large::before {
     content: "\f116";
 }
 
-.icon_filter_height_medium::before {
+.icon-filter_height_medium::before {
     content: "\f117";
 }
 
-.icon_filter_height_small::before {
+.icon-filter_height_small::before {
     content: "\f118";
 }
 
-.icon_filter_weight_large::before {
+.icon-filter_weight_large::before {
     content: "\f119";
 }
 
-.icon_filter_weight_medium::before {
+.icon-filter_weight_medium::before {
     content: "\f11a";
 }
 
-.icon_filter_weight_small::before {
+.icon-filter_weight_small::before {
     content: "\f11b";
 }
 
-.icon_friends::before {
+.icon-friends::before {
     content: "\f11c";
 }
 
-.icon_gender::before {
+.icon-gender::before {
     content: "\f11d";
 }
 
-.icon_hamburger::before {
+.icon-hamburger::before {
     content: "\f11e";
 }
 
-.icon_home::before {
+.icon-home::before {
     content: "\f11f";
 }
 
-.icon_journal::before {
+.icon-journal::before {
     content: "\f120";
 }
 
-.icon_joystick::before {
+.icon-joystick::before {
     content: "\f121";
 }
 
-.icon_male_symbol::before {
+.icon-male_symbol::before {
     content: "\f122";
 }
 
-.icon_messages::before {
+.icon-messages::before {
     content: "\f123";
 }
 
-.icon_minusv::before {
+.icon-minusv::before {
     content: "\f124";
 }
 
-.icon_multiply::before {
+.icon-multiply::before {
     content: "\f125";
 }
 
-.icon_notepage::before {
+.icon-notepage::before {
     content: "\f126";
 }
 
-.icon_plus::before {
+.icon-plus::before {
     content: "\f127";
 }
 
-.icon_points_champ::before {
+.icon-points_champ::before {
     content: "\f128";
 }
 
-.icon_points_game::before {
+.icon-points_game::before {
     content: "\f129";
 }
 
-.icon_pokeball::before {
+.icon-pokeball::before {
     content: "\f12a";
 }
 
-.icon_pokedex_added::before {
+.icon-pokedex_added::before {
     content: "\f12b";
 }
 
-.icon_pokemontv::before {
+.icon-pokemontv::before {
     content: "\f12c";
 }
 
-.icon_prize_bronze::before {
+.icon-prize_bronze::before {
     content: "\f12d";
 }
 
-.icon_prize_gold::before {
+.icon-prize_gold::before {
     content: "\f12e";
 }
 
-.icon_prize_silver::before {
+.icon-prize_silver::before {
     content: "\f12f";
 }
 
-.icon_refresh::before {
+.icon-refresh::before {
     content: "\f130";
 }
 
-.icon_remove::before {
+.icon-remove::before {
     content: "\f131";
 }
 
-.icon_search::before {
+.icon-search::before {
     content: "\f132";
 }
 
-.icon_settings::before {
+.icon-settings::before {
     content: "\f133";
 }
 
-.icon_trade::before {
+.icon-trade::before {
     content: "\f134";
 }
 
-.icon_videogame::before {
+.icon-videogame::before {
     content: "\f135";
 }
 
-.icon_wishlist::before {
+.icon-wishlist::before {
     content: "\f136";
 }
 
-.icon_wrench::before {
+.icon-wrench::before {
     content: "\f137";
 }
 
-.icon_news::before {
+.icon-news::before {
     content: "\f138";
 }
 
-.icon_mobile::before {
+.icon-mobile::before {
     content: "\f139";
 }
 
-.icon_go::before {
+.icon-go::before {
     content: "\f13a";
     margin-right: 30px;
 }
 
-.icon_xmark {
+.icon-xmark {
     transform: rotate(45deg);
 }
 
-.icon_xmark::before {
+.icon-xmark::before {
     content: "\f127";
+}
+
+.icon-user::before {
+	content: "\f13b";
+}
+
+.icon-pokemon-outlined::before {
+	content: "\f13c";
+}
+
+.icon-pokeball-outlined::before {
+	content: "\f13d";
+    pointer-events: none;
+}
+
+.icon-pokeball-colored::before {
+	content: "\f13e";
+    pointer-events: none;
+}
+
+.icon-heart-outlined::before {
+	content: "\f13f";
+    pointer-events: none;
+}
+
+.icon-heart-colored::before {
+	content: "\f140";
+    pointer-events: none;
+}
+
+.icon-film-outlined::before {
+	content: "\f141";
+}
+
+.icon-question-mark:before {
+	content: "\f142";
+}
+
+.icon-filter:before {
+	content: "\f143";
 }

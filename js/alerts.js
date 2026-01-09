@@ -12,8 +12,22 @@ closeButton.addEventListener('click', (e) => {
     hideAlert();
 });
 
-// Visualización de un alert según el tipo y el mensaje especificado.
-function showAlert (message, type) {
+/**
+ * Muestra una alerta con el texto y tipo indicados.
+ */
+function showAlert(message, type) {
+    if (alertCounter) {
+        window.clearTimeout(alertCounter);
+    }
+
+    showAlertVisually(message, type);
+}
+
+/**
+ * Enseña el elemento alert en sí e inicia el temporizador 
+ * para ocultarlo.
+ */
+function showAlertVisually(message, type) {
     alert.classList.remove('hidden');
     alert.classList.add('show');
 
@@ -27,8 +41,11 @@ function showAlert (message, type) {
     alertCounter = setTimeout(hideAlert, 5000);
 }
 
-// Oculta un alert.
-function hideAlert () {
+/**
+ * Oculta un elemento tipo alert y limpia el tiempo
+ * de espera.
+ */
+function hideAlert() {
     alert.classList.remove('show');
     alert.classList.add('hidden');
     window.clearTimeout(alertCounter);

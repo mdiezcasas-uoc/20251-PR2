@@ -6,15 +6,16 @@
     transform: translateX(-50%);
 
     background-color: var(--white-color);
-    border: 2px solid var(--grey-light-color);
+    border: 2px solid var(--grey-lighter-color);
     padding: 1.5rem 4rem 1.5rem 2rem;
     border-radius: 6px;
 
     min-width: 620px;
     font-family: var(--font-demi);
-    font-size: clamp(18px, calc(-0.875rem + 8.333vw), 16px);
+    font-size: var(--font-size-normal);
 
     transition: transform 0.5s ease-in-out;
+    z-index: 500;
 }
 
 .alert > #closeAlertButton {
@@ -54,7 +55,6 @@
 .alert.hidden {
     animation-name: slideOut;
     animation-duration: 0.8s;
-    /* animation-delay: 2s; */
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
     animation-direction: normal;
@@ -64,7 +64,6 @@
 .alert.show {
     animation-name: slideIn;
     animation-duration: 0.5s;
-    /* animation-delay: 2s; */
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
     animation-direction: normal;
@@ -88,5 +87,12 @@
 
     100% {
         top: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .alert {
+        min-width: 0;
+        width: 90%;
     }
 }

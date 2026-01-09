@@ -1,7 +1,17 @@
+
+// Configuración de las URL para las llamadas a la API.
 const config = {
-    apiBaseUrl: 'https://pokeapi.co/api/v2/pokemon?limit='
+    url : {
+        base: 'https://pokeapi.co/api/v2/pokemon?limit=',
+        pokemon: 'https://pokeapi.co/api/v2/pokemon/',
+        species: 'https://pokeapi.co/api/v2/pokemon-species/',
+        evolution: 'https://pokeapi.co/api/v2/evolution-chain/',
+        abilities: 'https://pokeapi.co/api/v2/ability?limit=400',
+        types: 'https://pokeapi.co/api/v2/type?limit=18',
+    }
 };
 
+// Listado de ciudades con sus respectivos códigos postales.
 const cities = [
     { name: 'Madrid', postalCode: "28001" },
     { name: 'Barcelona', postalCode: "08001" },
@@ -35,29 +45,3 @@ const cities = [
     { name: 'Logroño', postalCode: "26001" },
     { name: 'Salamanca', postalCode: "37001" }
 ]
-
-
-const type_list = [
-    { id: 'grass', name: 'grass' },
-    { id: 'fire', name: 'fire' },
-    { id: 'water', name: 'water' },
-    { id: 'bug', name: 'bug' },
-    { id: 'normal', name: 'normal' },
-    { id: 'electric', name: 'electric' },
-    { id: 'ground', name: 'ground' },
-    { id: 'fairy', name: 'fairy' },
-    { id: 'fighting', name: 'fighting' },
-    { id: 'psychic', name: 'psychic' },
-    { id: 'rock', name: 'rock' },
-    { id: 'ghost', name: 'ghost' },
-    { id: 'ice', name: 'ice' },
-    { id: 'dragon', name: 'dragon' },
-    { id: 'poison', name: 'poison' },
-    { id: 'flying', name: 'flying' },
-]
-
-const listNames = {
-    myTeamList: "Mi Equipo",
-    wishList: "Lista de deseos",
-};
-

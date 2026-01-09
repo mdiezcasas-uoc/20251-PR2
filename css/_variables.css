@@ -1,36 +1,127 @@
 /* Variables */
 :root {
-    /* Colors */
-    --white-color: #FFFFFF;
-    --grey-light-color: #DFDFDF;
-    --black-color: #000000;
+	/* Colors */
+	--white-color: #FFFFFF;
+	--grey-lightest-color: #F5F5F5;
+	--grey-lighter-color: #DFDFDF;
+	--grey-light-color: #BDB9B8;
+	--grey-color: #919191;
+	--grey-dark-color: #595959;
+	--black-color: #000000;
 
-    --primary-color: #FF1C1C;
-    --primary-dark-color: #DF1818;
+	--primary-color: #FF1C1C;
+	--primary-dark-color: #DF1818;
 
-    --secondary-color: #336BB3;
-    --secondary-dark-color: #203A6F;
+	--secondary-color: #336BB3;
+	--secondary-light-color: #30A7D7;
+	--secondary-dark-color: #203A6F;
 
-    --tertiary-color: #FFCA02;
-    --tertiary-dark-color: #C79E07;
+	--tertiary-color: #FFCA02;
+	--tertiary-dark-color: #C79E07;
 
-    --success-color: #15B746;
-    --danger-color: #DF1818;
-    --info-color: #336BB3;
-    --warning-color: #C79E07;
+	--success-color: #15B746;
+	--danger-color: #DF1818;
+	--info-color: #336BB3;
+	--warning-color: #C79E07;
 
-    --success-bg-color: #D7FBE2;
-    --danger-bg-color: #FFBBBB;
-    --info-bg-color: #C5D8EF;
-    --warning-bg-color: #FFF2C2;
+	--success-bg-color: #D7FBE2;
+	--danger-bg-color: #FFBBBB;
+	--info-bg-color: #C5D8EF;
+	--warning-bg-color: #FFF2C2;
 
-    /* Fonts */
-    --font-thin: 'Flexo Thin', sans-serif;
-    --font-regular: 'Flexo Regular', sans-serif;
-    --font-medium: 'Flexo Medium', sans-serif;
-    --font-demi: 'Flexo Demi', sans-serif;
-    --font-bold: 'Flexo Bold', sans-serif;
+	/* Types colors */
+	--type-normal: #A4ACAF;
+	--type-fighting: #D56723;
+	--type-flying: linear-gradient(180deg, #3DC7EF 50%, #BDB9B8 50%);
+	--type-poison: #B97FC9;
+	--type-ground: linear-gradient(180deg, #F7DE3F 50%, #AB9842 50%);
+	--type-rock: #A38C21;
+	--type-bug: #729F3F;
+	--type-ghost: #7B62A3;
+	--type-steel: #9EB7B8;
+	--type-fire: #FD7D24;
+	--type-water: #4592C4;
+	--type-grass: #9BCC50;
+	--type-electric: #EED535;
+	--type-psychic: #F366B9;
+	--type-ice: #51C4E7;
+	--type-dragon: linear-gradient(180deg, #53A4CF 50%, #F16E57 50%);
+	--type-dark: #707070;
+	--type-fairy: #FDB9E9;
 
-    /* Shadow */
-    --shadow-logo: -10px 8px 0.75rem rgba(0, 0, 0, 0.5);
+	/* Gender colors */
+	--male-color: var(--secondary-color);
+	--female-color: #DD2D51;
+
+	/* Fonts */
+	--font-thin: 'Flexo Thin', sans-serif;
+	--font-regular: 'Flexo Regular', sans-serif;
+	--font-medium: 'Flexo Medium', sans-serif;
+	--font-demi: 'Flexo Demi', sans-serif;
+	--font-bold: 'Flexo Bold', sans-serif;
+
+
+	--4xs: 0.6875rem;	/*11px*/
+	--3xs: 0.75rem;		/*12px*/
+	--xxs: 0.8125rem;	/*13px*/
+	--xs: 0.875rem;		/*14px*/
+	--s: 1rem;			/*16px*/
+	--m: 1.125rem;		/*18px*/
+	--l: 1.25rem;		/*20px*/
+	--xl: 1.375rem;		/*22px*/
+	--xxl: 1.5rem;		/*24px*/
+	--3xl: 1.625rem;	/*26px*/
+	--4xl: 1.75rem;		/*28px*/
+	--5xl: 2rem;		/*32px*/
+	--6xl: 2.25rem;		/*36px*/
+	--7xl: 2.5rem; 		/*40px*/
+	--8xl: 2.625rem;	/*42px*/
+	--9xl: 2.875rem;	/*46px*/
+	--10xl: 3.25rem;	/*52px*/
+
+	/* clamp($min, calc(-0.875rem + 5.333vw), $max); */
+	--font-size-tiny: clamp(var(--4xs), calc(-0.875rem + 5.333vw), var(--4xs));
+	--font-size-smallest: clamp(var(--3xs), calc(-0.875rem + 5.333vw), var(--3xs));
+	--font-size-smaller: clamp(var(--xxs), calc(-0.875rem + 5.333vw), var(--xs));
+	--font-size-small: clamp(var(--xs), calc(-0.875rem + 5.333vw), var(--s));
+	--font-size-normal: clamp(var(--s), calc(-0.875rem + 5.333vw), var(--m));
+	--font-size-medium: clamp(var(--m), calc(-0.875rem + 5.333vw), var(--l));
+	--font-size-medium-large: clamp(var(--xl), calc(-0.875rem + 5.333vw), var(--xl));
+	--font-size-medium-larger: clamp(var(--l), calc(-0.875rem + 5.333vw), var(--xxl));
+	--font-size-big: clamp(var(--xxl), calc(-0.875rem + 5.333vw), var(--3xl));
+	--font-size-bigger: clamp(var(--3xl), calc(-0.875rem + 5.333vw), var(--4xl));
+	--font-size-biggest: clamp(var(--5xl), calc(-0.875rem + 5.333vw), var(--5xl));
+	--font-size-large: clamp(var(--6xl), calc(-0.875rem + 5.333vw), var(--6xl));
+	--font-size-larger: clamp(var(--l), calc(-0.875rem + 5.333vw), var(--7xl));
+	--font-size-largest: clamp(var(--4xl), calc(-0.875rem + 5.333vw), var(--9xl));
+	--font-size-jumbo: clamp(var(--8xl), calc(-0.875rem + 5.333vw), var(--10xl));
+	
+
+	/*
+		--- 11px - 11px   - Tiny
+		--- 12px - 12px   - Smallest
+		--- 13px - 14px   - Smaller
+		--- 16px - 16px   - Small
+		--- 16px - 18px   - Normal
+		--- 18px - 20px   - Medium
+		--- 22px - 22px   - Medium-large
+		--- 20px - 24px   - Medium-larger
+		--- 24px - 26px   - Big
+		--- 26px - 28px   - Bigger
+		--- 32px - 32px   - Biggest
+		--- 36px - 36px   - Large
+		--- 20px - 40px   - Larger
+		--- 28px - 46px   - Largest
+		--- 42px - 52px   - Jumbo
+	*/
+
+
+
+
+	/* Shadow */
+	--shadow-logo: -10px 8px 0.75rem rgba(0, 0, 0, 0.5);
+	--card-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10);
+	--navbar-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	--menu-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	--dropdown-menu-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
 }

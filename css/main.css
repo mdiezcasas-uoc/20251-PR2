@@ -7,5 +7,12 @@
 @import '_alert.css';
 @import '_buttons.css';
 @import '_inputs.css';
+@import '_menu.css';
+@import '_cards.css';
+@import '_label.css';
+@import '_tabs.css';
+@import '_loader.css';
 
 @import '_public.css';
+@import '_index.css';
+@import '_detail.css';

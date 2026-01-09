@@ -14,7 +14,7 @@
     padding: 1.125rem 1rem;
     
     font-family: var(--font-regular);
-    font-size: clamp(18px, calc(-0.875rem + 8.333vw), 16px);
+    font-size: var(--font-size-normal);
     transition: 0.2s;
 }
 
@@ -32,11 +32,10 @@
     left: 0.8rem;
     top: 50%;
     transform: translateY(-50%);
-
     padding: 0 0.5rem;
 
     font-family: var(--font-demi);
-    font-size: clamp(18px, calc(-0.875rem + 8.333vw), 16px);
+    font-size: var(--font-size-normal);
     background-color: var(--white-color);
 
     transition: 0.3s;

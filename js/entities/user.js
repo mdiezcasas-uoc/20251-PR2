@@ -107,6 +107,34 @@ class User {
     }
 
     /**
+     * Añade el id de un Pokémon a su respectiva lista si aún no está
+     * incluido en ella.
+     */
+    addToList(type, pokemonId) {
+        if (type === 'wishlist' && !this.#wishList.includes(pokemonId)) {
+            this.#wishList.push(pokemonId);
+        }
+
+        if (type === 'team' && !this.#teamList.includes(pokemonId)) {
+            this.#teamList.push(pokemonId);
+        }
+    }
+
+    /**
+     * Elimina el id de un Pokémon de su respectiva lista si está
+     * incluido en ella.
+     */
+    removeFromList(type, pokemonId) {
+        if (type === 'wishlist' && this.#wishList.includes(pokemonId)) {
+            this.#wishList.splice(this.#wishList.indexOf(pokemonId), 1);
+        }
+
+        if (type === 'team' && this.#teamList.includes(pokemonId)) {
+            this.#teamList.splice(this.#teamList.indexOf(pokemonId), 1);
+        }
+    }
+
+    /**
      * Encripta la contraseña del usuario sobreescribiendo el valor original.
      */
     async hashPassword() {
@@ -161,22 +189,4 @@ class User {
             return null;
         }
     }
-
-
-    // Método para añadir o eliminar pokemons de las listas
-    manageList(pokemon, listName, action) {
-        //...
-    }
-
-    /* Método para guardar el usuario en el localStorage */
-    save() {
-        //...
-    }
-
-    /* Método para actualizar un usuario en el localStorage */
-    update() {
-        //...
-    }
-
-    /* Añadir las funciones que consideréis necesarias*/
 }

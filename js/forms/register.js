@@ -128,7 +128,7 @@ postalCodeInput?.addEventListener('input', (e) => {
 // Mapeo del valor y verificación del input username.
 const usernameInput = document.querySelector('#username');
 usernameInput?.addEventListener('input', (e) => {
-    formValues.username = e.target.value;
+    formValues.username = e.target.value.toLowerCase();
 
     validations.username = !isEmpty(e.target) && hasMinLength(e.target, 3) && !hasSpaces(e.target);
     toggleClass(e.target, validations.username);
@@ -171,7 +171,7 @@ async function onRegisterSubmit(e) {
     // Verifica que la cantidad de campos existentes para la validación es la misma que 
     // la cantidad de campos válidos, asegurando que no falta nada.
     // En caso de coinidir, se procede con la lógica del registro de usuario.
-    if (Object.entries(validations).length == Object.values(validations).filter(valid => valid == true).length) {
+    if (Object.entries(validations).length === Object.values(validations).filter(valid => valid === true).length) {
 
         // Se extrae el listado de usuarios del localStorage.
         let users = Store.getUserInstances();
@@ -185,7 +185,9 @@ async function onRegisterSubmit(e) {
 
         // En caso contrario, se procede con la creación e inserción del nuevo registro.
         } else {
-            let newUser = new User({...formValues}, [], []);
+            let newUser = new User({...formValues});
+            newUser.setWishList = new Array();
+            newUser.setTeamList = new Array();
             await newUser.hashPassword();
 
             let isSaved = Store.insertUser(newUser);

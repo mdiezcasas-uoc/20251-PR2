@@ -6,7 +6,7 @@
     border: 2px solid transparent;
 
     font-family: var(--font-demi);
-    font-size: clamp(20px, calc(-0.875rem + 8.333vw), 18px);
+    font-size: var(--font-size-medium);
     padding: 1rem 1.2rem;
 
     border-radius: 6px;
@@ -23,8 +23,16 @@
     width: 100%;
 }
 
-.btn:hover {
-    transition: 0.4s;
+.btn.small {
+    font-size: var(--font-size-smaller);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        transition: 0.4s;
+    }
 }
 
 .btn::before {
@@ -40,9 +48,11 @@
     transition: 0.4s;
 }
 
-.btn:hover::before {
-    width: 100%;
-    transition: 0.4s;
+@media (hover: hover) {
+    .btn:hover::before {
+        width: 100%;
+        transition: 0.4s;
+    }
 }
 
 /* Primary */
@@ -56,9 +66,11 @@
     color: var(--primary-color);
 }
 
-.btn.primary-filled:hover, .btn.primary-outlined:hover {
-    border-color: var(--primary-dark-color);
-    color: var(--white-color);
+@media (hover: hover) {
+    .btn.primary-filled:hover, .btn.primary-outlined:hover {
+        border-color: var(--primary-dark-color);
+        color: var(--white-color);
+    }
 }
 
 .btn.primary-filled::before, .btn.primary-outlined::before {
@@ -76,9 +88,11 @@
     color: var(--secondary-color);
 }
 
-.btn.secondary-filled:hover, .btn.secondary-outlined:hover {
-    border-color: var(--secondary-dark-color);
-    color: var(--white-color);
+@media (hover: hover) {
+    .btn.secondary-filled:hover, .btn.secondary-outlined:hover {
+        border-color: var(--secondary-dark-color);
+        color: var(--white-color);
+    }
 }
 
 .btn.secondary-filled::before, .btn.secondary-outlined::before {

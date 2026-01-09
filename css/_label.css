@@ -1,0 +1,131 @@
+
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: var(--font-medium);
+}
+
+/* Sizes */
+.label.small {
+    max-width: 95px;
+    font-size: var(--font-size-tiny);
+    padding: 4px 20px;
+    border-radius: 3px;
+    margin: auto;
+}
+
+.label.default {
+    max-width: 80px;
+    font-size: var(--font-size-smallest);
+    padding: 4px 20px;
+    border-radius: 2px;
+}
+
+.label.big {
+    width: 110px;
+    font-size: var(--font-size-small);
+    padding: 6px 30px;
+    border-radius: 4px;
+}
+
+@media(max-width: 640px) {
+    .label.big {
+        max-width: 140px;
+        font-size: var(--font-size-default);
+        padding: 8px 30px;
+    }
+}
+
+
+/* Types */
+.label.normal {
+    background-color: var(--type-normal);
+    color: var(--black-color);
+}
+
+.label.fighting {
+    background-color: var(--type-fighting);
+    color: var(--white-color);
+}
+
+.label.flying {
+    background: var(--type-flying);
+    color: var(--black-color);
+}
+
+.label.poison {
+    background-color: var(--type-poison);
+    color: var(--white-color);
+}
+
+.label.ground {
+    background: var(--type-ground);
+    color: var(--black-color);
+}
+
+.label.rock {
+    background-color: var(--type-rock);
+    color: var(--white-color);
+}
+
+.label.bug {
+    background-color: var(--type-bug);
+    color: var(--white-color);
+}
+
+.label.ghost {
+    background-color: var(--type-ghost);
+    color: var(--white-color);
+}
+
+.label.steel {
+    background-color: var(--type-steel);
+    color: var(--black-color);
+}
+
+.label.fire {
+    background-color: var(--type-fire);
+    color: var(--white-color);
+}
+
+.label.water {
+    background-color: var(--type-water);
+    color: var(--white-color);
+}
+
+.label.grass {
+    background-color: var(--type-grass);
+    color: var(--black-color);
+}
+
+.label.electric {
+    background-color: var(--type-electric);
+    color: var(--black-color);
+}
+
+.label.psychic {
+    background-color: var(--type-psychic);
+    color: var(--white-color);
+}
+
+.label.ice {
+    background-color: var(--type-ice);
+    color: var(--black-color);
+}
+
+.label.dragon {
+    background: var(--type-dragon);
+    color: var(--white-color);
+}
+
+.label.dark {
+    background-color: var(--type-dark);
+    color: var(--white-color);
+}
+
+.label.fairy {
+    background-color: var(--type-fairy);
+    color: var(--black-color);
+}

@@ -16,10 +16,14 @@
     <script src="../js/config.js" defer></script>
     <script src="../js/encrypt.js" defer></script>
     <script src="../js/session.js" defer></script>
-    <script src="../js/storage.js" defer></script>
     <script src="../js/alerts.js" defer></script>
     <script src="../js/entities/user.js" defer></script>
+    <script src="../js/entities/pokemon.js" defer></script>
+    <script src="../js/entities/pokemonlist.js" defer></script>
     <script src="../js/forms/validations.js" defer></script>
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/loader.js" defer></script>
 
     <!-- JavaScript: lógica de la página -->
     <script src="../js/forms/login.js" defer></script>
@@ -29,11 +33,13 @@
     <meta name="description" content="Inicia sesión para acceder a tu Pokédex.">
 </head>
 <body>
+    <div id="loader"></div>
+
     <div id="login-page" class="auth-layout">
         <div class="auth-left">
             <img class="auth-logo" src="../img/pokedex-uoc.svg" alt="Pokédex-UOC" />
 
-            <p class="auth-legal-info">🄯 2025. Creado por Marta Díez Casas</p>
+            <p class="auth-legal-info">🄯 2026. Creado por Marta Díez Casas</p>
         </div>
 
         <div class="auth-right-container">
@@ -64,20 +70,18 @@
                 <div class="auth-alternative">
                     <p>¿No tienes cuenta?</p>
                     <button type="button" id="toRegister" class="btn secondary-outlined full"><span>Regístrate</span></button>
-                    <!-- <a class="btn secondary-outlined full" href="register.html"><span>Regístrate</span></a> -->
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Alert -->
     <div id="alert" class="alert danger">
         <p id="alert-content">Texto informativo del alert.</p>
         <a id="closeAlertButton">
-            <i class="icon icon_xmark"></i>
+            <i class="icon icon-xmark"></i>
         </a>
     </div>
 </body>
-    <!-- <script src="../js/classes.js"></script>
-    <script src="../js/auth.js"></script> -->
 </html>
 
